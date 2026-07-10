@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 
@@ -12,6 +13,11 @@ const { startClaim, findAndConsumeClaim } = require('./claims');
 const products = require('../products.json');
 
 const app = express();
+
+// Permite que tu web (en Vercel, GitHub Pages, o cualquier dominio) pueda
+// llamar a /claim/start desde el navegador. Sin esto, el navegador bloquea
+// la peticion por seguridad (politica de CORS) y el modal siempre falla.
+app.use(cors());
 
 // Guardamos el body "crudo" (sin parsear) porque PayPal firma exactamente
 // esos bytes. Si Express lo re-serializa distinto, la verificacion falla.
