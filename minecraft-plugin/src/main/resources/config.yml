@@ -7,35 +7,35 @@
 # maquina que el servidor de Minecraft (recomendado, mas seguro).
 # Si corren en maquinas distintas, cambia a "0.0.0.0" y protege el puerto
 # con firewall (solo permitir la IP de tu VPS del webhook).
-bind-address: "127.0.0.1"
-port: 8099
+bind-address: "0.0.0.0"
+port: 25977
 
 # Debe ser EXACTAMENTE el mismo valor que MC_DELIVERY_SECRET en el .env
 # del servicio webhook. Usa algo largo y aleatorio, nunca lo compartas.
-secret-token: "cambia_este_token_por_uno_largo_y_aleatorio"
+secret-token: "hello_secrect"
 
 # Mensaje que se anuncia a todo el servidor cuando se entrega una compra.
 # Deja "" (vacio) para desactivar el anuncio publico de un producto en concreto.
 products:
   knight:
     commands:
-      - "lp user {player} parent add knight"
+      - "lp user {player} parent set knight"
     broadcast: "&b¡{player} &fha adquirido el rango &bKnight&f en la tienda!"
   lord:
     commands:
-      - "lp user {player} parent add lord"
+      - "lp user {player} parent set lord"
     broadcast: "&9¡{player} &fha adquirido el rango &9Lord&f en la tienda!"
   paladin:
     commands:
-      - "lp user {player} parent add paladin"
+      - "lp user {player} parent set paladin"
     broadcast: "&a¡{player} &fha adquirido el rango &aPaladin&f en la tienda!"
   duke:
     commands:
-      - "lp user {player} parent add duke"
+      - "lp user {player} parent set duke"
     broadcast: "&5¡{player} &fha adquirido el rango &5Duke&f en la tienda!"
   king:
     commands:
-      - "lp user {player} parent add king"
+      - "lp user {player} parent set king"
     broadcast: "&6¡{player} &fha adquirido el rango &6King&f en la tienda!"
   coins500:
     commands:
