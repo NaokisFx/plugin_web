@@ -1,0 +1,16 @@
+name: NexNordDelivery
+version: '${project.version}'
+main: com.nexnord.delivery.NexNordDelivery
+api-version: '1.20'
+author: NexNord
+description: Entrega automatica de rangos y coins comprados en la tienda web de NexNord.
+
+commands:
+  nexnorddelivery:
+    description: Administra el plugin de entregas de NexNord
+    permission: nexnord.delivery.admin
+    aliases: [nnd]
+
+permissions:
+  nexnord.delivery.admin:
+    default: op
