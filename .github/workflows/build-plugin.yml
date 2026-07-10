@@ -19,11 +19,11 @@ jobs:
           cache: maven
 
       - name: Compilar con Maven
-        working-directory: nexnord-auto-delivery/minecraft-plugin
+        working-directory: minecraft-plugin
         run: mvn -B clean package
 
       - name: Subir el .jar como descarga
         uses: actions/upload-artifact@v4
         with:
           name: NexNordDelivery-jar
-          path: nexnord-auto-delivery/minecraft-plugin/target/NexNordDelivery-*.jar
+          path: minecraft-plugin/target/NexNordDelivery-*.jar
